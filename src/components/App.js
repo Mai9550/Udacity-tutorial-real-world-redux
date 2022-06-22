@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { handleinitialData } from '../actions/shared'
 class App extends Component {
   componentDidMount(){
-    this.props.dispatch(handleinitialData)
+    this.props.dispatch(handleinitialData())
   }
   render() {
     return (
