@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { handleinitialData } from '../actions/shared'
+import Dashboard  from './Dashboard'
 class App extends Component {
   componentDidMount(){
     this.props.dispatch(handleinitialData())
@@ -8,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        Starter Code
+        <Dashboard/>
       </div>
     )
   }
