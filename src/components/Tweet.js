@@ -12,7 +12,7 @@ class Tweet extends Component{
         e.preventDefault()
     }
 
-        toParent = (e,id) =>{
+        toParent = (e) =>{
             e.preventDefault()
         }
 
@@ -24,7 +24,7 @@ class Tweet extends Component{
             }
 
             const {
-                name, avatar,timestamp, text, hasLiked, likes, replies, id, parent
+                name, avatar,timestamp, text, hasLiked, likes, replies, parent
             } = tweet
             
         return (
