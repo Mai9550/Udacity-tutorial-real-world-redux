@@ -7,6 +7,15 @@ import TiHeartFullOutline from 'react-icons/lib/ti/heart-full-outline'
 
 
 class Tweet extends Component{
+
+    handleLike = (e) => {
+        e.preventDefault()
+    }
+
+        toParent = (e,id) =>{
+            e.preventDefault()
+        }
+
     render(){
         const { tweet } = this.props;
 
@@ -25,10 +34,33 @@ class Tweet extends Component{
                 alt={`Avatar of ${name}`}
                 className='avatar'
                 />
-            </div>
+            
+             <div className="tweet-info">
+
+                <span>{name}</span>
+                    <div>{formatDate(timestamp)}</div>
+                    {parent && (
+                        <button className="replying-to" onClick={(e)=>this.toParent(e,parent.id)} >
+                            Replying to @{parent.author}
+                        </button>
+                    )                   
+                    }
+                <p>{text}</p>
+             </div>
+             <div className='tweet-icons'>
+             <TiArrowBackOutline className='tweet-icon' />
+                 <span>{replies !== 0 && replies}</span>
+                 <button className='heart-button' onClick={this.handleLike}>
+                      {hasLiked === true
+                ? <TiHeartFullOutline color='#e0245e' className='tweet-icon' />
+                : <TiHeartOutline className='tweet-icon'/>}
+                     </button>
+                </div>
+           </div>
+
         )
 
-        
+      
     }
 }
 
