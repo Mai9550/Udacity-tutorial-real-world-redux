@@ -1,9 +1,7 @@
 import React,{Component} from "react";
 import { connect } from "react-redux";
 import { formatTweet , formatDate } from '../utils/helpers';
-import TiArrowBackOutline from 'react-icons/lib/ti/arrow-back-outline'
-import TiHeartOutline from 'react-icons/lib/ti/heart-outline'
-import TiHeartFullOutline from 'react-icons/lib/ti/heart-full-outline'
+
 
 
 class Tweet extends Component{
@@ -48,12 +46,12 @@ class Tweet extends Component{
                 <p>{text}</p>
              </div>
              <div className='tweet-icons'>
-             <TiArrowBackOutline className='tweet-icon' />
+             <div className='tweet-icon' />
                  <span>{replies !== 0 && replies}</span>
                  <button className='heart-button' onClick={this.handleLike}>
                       {hasLiked === true
-                ? <TiHeartFullOutline color='#e0245e' className='tweet-icon' />
-                : <TiHeartOutline className='tweet-icon'/>}
+                ? <img color='#e0245e' className='tweet-icon' />
+                : <img className='tweet-icon'/>}
                      </button>
                 </div>
            </div>
