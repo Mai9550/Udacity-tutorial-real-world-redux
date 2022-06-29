@@ -1,5 +1,6 @@
 import React,{Component} from "react";
 import { connect } from "react-redux";
+import { handleToggleTweet } from "../actions/tweets";
 import { formatTweet , formatDate } from '../utils/helpers';
 
 
@@ -8,7 +9,21 @@ class Tweet extends Component{
 
     handleLike = (e) => {
         e.preventDefault()
+
+        const {dispatch,tweet,authedUser} = this.props;
+
+
+
+        dispatch(
+            handleToggleTweet({
+                id: tweet.id,
+                hasLiked: tweet.hasLiked,
+                authedUser
+            })
+        )
     }
+
+
 
         toParent = (e) =>{
             e.preventDefault()
