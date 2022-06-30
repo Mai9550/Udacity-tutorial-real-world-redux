@@ -62,12 +62,12 @@ class Tweet extends Component{
                 <p>{text}</p>
              </div>
              <div className='tweet-icons'>
-             <ThumbUpIcon className='tweet-icon' />
+             <div className='tweet-icon' />
                  <span>{replies !== 0 && replies}</span>
                  <button className='heart-button' onClick={this.handleLike}>
                       {hasLiked === true
-                ? <img color='#e0245e' className='tweet-icon' />
-                : <img className='tweet-icon'/>}
+                ? <ThumbUpIcon color='#e0245e' className='tweet-icon' />
+                : <ThumbUpIcon className='tweet-icon'/>}
                      </button>
                 </div>
            </div>
