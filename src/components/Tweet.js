@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import { connect } from "react-redux";
 import { handleToggleTweet } from "../actions/tweets";
 import { formatTweet , formatDate } from '../utils/helpers';
+import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 
 
 
@@ -61,7 +62,7 @@ class Tweet extends Component{
                 <p>{text}</p>
              </div>
              <div className='tweet-icons'>
-             <div className='tweet-icon' />
+             <ThumbUpIcon className='tweet-icon' />
                  <span>{replies !== 0 && replies}</span>
                  <button className='heart-button' onClick={this.handleLike}>
                       {hasLiked === true
