@@ -70,6 +70,7 @@ class Tweet extends Component{
                 ? <ThumbUpIcon color='#e0245e' className='tweet-icon' />
                 : <ThumbUpOutlinedIcon className='tweet-icon'/>}
                      </button>
+                     <span>{likes !== 0 && likes}</span>
                 </div>
            </div>
 
