@@ -4,7 +4,7 @@ import { handleToggleTweet } from "../actions/tweets";
 import { formatTweet , formatDate } from '../utils/helpers';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
-
+import ReplyIcon from '@mui/icons-material/Reply';
 
 
 class Tweet extends Component{
@@ -33,7 +33,7 @@ class Tweet extends Component{
 
     render(){
         const { tweet } = this.props;
-
+            
             if (tweet === null) {
                 return <p>This Tweet doesn't exist</p>
             }
@@ -63,6 +63,8 @@ class Tweet extends Component{
                 <p>{text}</p>
              </div>
              <div className='tweet-icons'>
+             <ReplyIcon className='tweet-icon' />
+            <span>{replies !== 0 && replies}</span>
              <div className='tweet-icon' />
                  
                  <button className='heart-button' onClick={this.handleLike}>
