@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { handleToggleTweet } from "../actions/tweets";
 import { formatTweet , formatDate } from '../utils/helpers';
 import ThumbUpIcon from '@mui/icons-material/ThumbUp';
+import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 
 
 
@@ -63,11 +64,11 @@ class Tweet extends Component{
              </div>
              <div className='tweet-icons'>
              <div className='tweet-icon' />
-                 <span>{replies !== 0 && replies}</span>
+                 
                  <button className='heart-button' onClick={this.handleLike}>
                       {hasLiked === true
                 ? <ThumbUpIcon color='#e0245e' className='tweet-icon' />
-                : <ThumbUpIcon className='tweet-icon'/>}
+                : <ThumbUpOutlinedIcon className='tweet-icon'/>}
                      </button>
                 </div>
            </div>
