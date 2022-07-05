@@ -28,7 +28,17 @@ class NewTweet extends Component {
     render(){
         return(
             <div>
-                New Tweet
+                <h3>Compose new Tweet</h3>
+                <form className='new-tweet' onSubmit={this.handleSubmit}>
+                    <textarea
+                    placeholder="what's happening?"
+                    Value={text}
+                    onChange={this.handleChange}
+                    className='textarea'
+                    maxLength={280}
+                    />
+                </form>
+
             </div>
         )
     }
