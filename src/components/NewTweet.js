@@ -16,6 +16,8 @@ class NewTweet extends Component {
         e.preventDefault()
     
         const { text } = this.state
+
+        const tweetLeft = 280 - text.length
     
         // todo: Add Tweet to Store
     
@@ -37,6 +39,17 @@ class NewTweet extends Component {
                     className='textarea'
                     maxLength={280}
                     />
+                                {tweetLeft <= 100 && (
+                        <div className='tweet-length'>
+                        {tweetLeft}
+                        </div>
+                    )}
+                    <button
+                        className='btn'
+                        type='submit'
+                        disabled={text === ''}>
+                        Submit
+                    </button>
                 </form>
 
             </div>
