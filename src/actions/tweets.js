@@ -12,6 +12,25 @@ function addTweet(tweet) {
     }
 }
 
+export function handleAddTweet(text,replyingTo) {
+    return(dispatch,getState) =>{
+        const {authedUser} = getState()
+        dispatch (showLoading())
+
+        return saveTweet({
+            text,
+            author: authedUser,
+            replyingTo
+        })
+            .then(
+                (tweet) => dispatch(addTweet(tweet))
+            )
+            .then(
+                () => dispatch(hideLoading())
+            )
+    }
+}
+
 export function receiveTweets(tweets) {
     return {
         type: RECEIVE_TWEETS,
