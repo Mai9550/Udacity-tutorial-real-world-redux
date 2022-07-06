@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { handleAddTweet } from '../actions/tweets'
 
 class NewTweet extends Component {
     state={
@@ -15,7 +16,10 @@ class NewTweet extends Component {
     handleSubmit = (e) => {
         e.preventDefault()
     
-        const { text } = this.state
+        const { text } = this.state;
+        const { dispatch,id } = this.props;
+        
+        dispatch(handleAddTweet(text,id))
 
         const tweetLeft = 280 - text.length
     
