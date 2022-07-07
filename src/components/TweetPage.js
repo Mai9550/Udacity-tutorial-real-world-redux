@@ -1,4 +1,5 @@
 import React,{Component} from "react";
+import {connect} from 'react-redux'
 
 class TweetPage extends Component {
     render(){
@@ -9,5 +10,14 @@ class TweetPage extends Component {
         )
     }
 }
+function mapStateToProps({authedUser,tweets,users},props){
 
-export default TweetPage;
+    const{id}=props.match.params
+        return {
+            id,
+            replies:!tweets[id]
+            ?[]
+        }
+}
+
+export default connect()(TweetPage);

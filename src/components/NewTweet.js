@@ -21,7 +21,7 @@ class NewTweet extends Component {
         
         
        
-    
+            dispatch(handleAddTweet(text,id))
         // todo: Add Tweet to Store
     
         console.log('New Tweet: ', text)
