@@ -19,9 +19,8 @@ class NewTweet extends Component {
         const { text } = this.state;
         const { dispatch,id } = this.props;
         
-        dispatch(handleAddTweet(text,id))
-
-        const tweetLeft = 280 - text.length
+        
+       
     
         // todo: Add Tweet to Store
     
@@ -32,6 +31,8 @@ class NewTweet extends Component {
         }))
       }
     render(){
+        const {text} = this.state
+        const tweetLeft = 280 - text.length
         return(
             <div>
                 <h3>Compose new Tweet</h3>
@@ -43,7 +44,7 @@ class NewTweet extends Component {
                     className='textarea'
                     maxLength={280}
                     />
-                                {tweetLeft <= 100 && (
+                                {tweetLeft <= 40 && (
                         <div className='tweet-length'>
                         {tweetLeft}
                         </div>
