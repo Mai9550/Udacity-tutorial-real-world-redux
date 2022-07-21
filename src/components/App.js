@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
 import { handleinitialData } from '../actions/shared'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
@@ -14,8 +14,10 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div>
+        <Fragment>
+      <div className='container'>
         <LoadingBar/>
+        <Nav />
         {
           this.props.loading === true
           ? null
@@ -27,6 +29,7 @@ class App extends Component {
             </div>
        }
       </div>
+      </Fragment>
       </Router>
     )
   }
