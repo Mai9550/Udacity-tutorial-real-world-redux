@@ -1,9 +1,11 @@
 import React, {Component} from 'react'
 import { handleAddTweet } from '../actions/tweets'
 
+
 class NewTweet extends Component {
     state={
-        text:''
+        text:'',
+        toHome: false
     }
     handleChange = (e) =>{
         const text = e.target.value
@@ -27,7 +29,8 @@ class NewTweet extends Component {
         console.log('New Tweet: ', text)
     
         this.setState(() => ({
-          text: ''
+          text: '',
+          toHome: id? false: true
         }))
       }
     render(){
